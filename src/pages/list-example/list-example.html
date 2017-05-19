@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onAddItem()">
+        <ion-icon name="add"></ion-icon>
+
+      </button>
+
+      <button ion-button icon-only (click)="onRemoveItem()">
+        <ion-icon name="remove"></ion-icon>
+
+      </button>
+
+    </ion-buttons>
+    <ion-title>List Example</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <!--<ion-list>-->
+    <!--<button ion-item *ngFor="let item of listItems">-->
+      <!--{{ item }}-->
+    <!--</button>-->
+  <!--</ion-list>-->
+
+    <ion-list show-delete="false" can-swipe="true">
+      <ion-item-sliding  *ngFor="let item of listItems">
+
+        <ion-item >{{item}} </ion-item>
+
+        <ion-item-options side="left">
+          <button ion-button (click)="onDuplicate(item)">Duplicate</button>
+          <button ion-button color="danger" >Share</button>
+        </ion-item-options>
+
+        <ion-item-options side="right">
+          <button ion-button>
+            <ion-icon name="archive"></ion-icon>
+             Archive
+            </button>
+        </ion-item-options>
+      </ion-item-sliding>
+
+    </ion-list>
+
+</ion-content>
