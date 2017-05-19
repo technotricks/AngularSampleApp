@@ -1,14 +1,31 @@
 <ion-header>
   <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onLoadNewPlace()">
+        <ion-icon name="add"></ion-icon>
+
+      </button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      My Sample Projects
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <!--************Button with click************-->
+  <!--<button (click)="onLoadNewPlace()" ion-button="">Add a Place</button>-->
+
+
+  <!--<ul>-->
+    <!--<li *ngFor="let place of places">{{place.title}}</li>-->
+
+  <!--</ul>-->
+
+  <ion-list>
+    <button ion-item *ngFor="let project of projects" (click)="itemSelected(project)">
+      {{ project.title }}
+    </button>
+  </ion-list>
+
 </ion-content>
