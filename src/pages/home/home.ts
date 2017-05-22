@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {NewPlacePage} from "../new-place/new-place";
 import {ProjectListService} from "../../services/projectlist.services";
-import {Project} from "./project.model";
+import {Project} from "../../model/project.model";
 
 @Component({
   selector: 'page-home',

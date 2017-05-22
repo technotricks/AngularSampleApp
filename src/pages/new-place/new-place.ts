@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {PlaceService} from "../../services/places.service";
 import {NavController, ToastController} from "ionic-angular";
 
 
@@ -9,7 +8,7 @@ import {NavController, ToastController} from "ionic-angular";
 })
 export class NewPlacePage {
 
-  constructor(private placesService: PlaceService, private  navCtrl: NavController, private toastCtrl:ToastController) {
+  constructor(private  navCtrl: NavController, private toastCtrl:ToastController) {
   }
 
   ionViewDidLoad() {
