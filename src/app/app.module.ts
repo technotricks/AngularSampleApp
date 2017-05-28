@@ -12,6 +12,11 @@ import {ProjectListService} from "../services/projectlist.services";
 import {ListExamplePage} from "../pages/list-example/list-example";
 import {StorageExamplePage} from "../pages/storage-example/storage-example";
 import {IonicStorageModule} from "@ionic/storage";
+import {CurrentLocationExamplePage} from "../pages/current-location-example/current-location-example";
+import {Geolocation} from "@ionic-native/geolocation";
+import {GooglemapExamplePage} from "../pages/googlemap-example/googlemap-example";
+import {GoogleMaps} from "@ionic-native/google-maps";
+import {AgmCoreModule} from "angular2-google-maps/core";
 
 @NgModule({
   declarations: [
@@ -19,12 +24,17 @@ import {IonicStorageModule} from "@ionic/storage";
     HomePage,
     NewPlacePage,
     ListExamplePage,
-    StorageExamplePage
+    StorageExamplePage,
+    CurrentLocationExamplePage,
+    GooglemapExamplePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyCa_DyGkvdnR8EqRoByYp887ptziYSdQNg'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,14 +42,18 @@ import {IonicStorageModule} from "@ionic/storage";
     HomePage,
     NewPlacePage,
     ListExamplePage,
-    StorageExamplePage
+    StorageExamplePage,
+    CurrentLocationExamplePage,
+    GooglemapExamplePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     PlaceService,
-    ProjectListService
+    ProjectListService,
+    Geolocation,
+    GoogleMaps
   ]
 })
 export class AppModule {}
